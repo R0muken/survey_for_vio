@@ -89,6 +89,6 @@ app.get('/percentage', (req, res) => {
     res.json(transformed);
 });
 
-app.listen(8080, () => {
+app.listen(process.env.PORT || 8080, () => {
     console.log("Server successfully running on port 8080");
 });
