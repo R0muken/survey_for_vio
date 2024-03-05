@@ -43,8 +43,11 @@ body {
 
 .radio-options .answer-container{
     display: flex;
-    justify-content: space-between;
     margin: 10px 0;
+}
+
+.answer-container input[type="radio"] {
+    width: 13px;
 }
 
 .option {
