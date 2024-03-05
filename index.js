@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 const QuestionTransform = require('./questionTransform')
+app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 const urlencodedParser = express.urlencoded({extended: false});
@@ -86,7 +87,44 @@ app.post('/hack', urlencodedParser, async(req, res) => {
 app.get('/percentage', (req, res) => {
 
     const transformed = Object.entries(answers).map(([name, value]) => new QuestionTransform(value, total, name))
-    res.json(transformed);
+    let q1 = []
+    let q2 = []
+    let q3 = []
+    let q4 = []
+    let q5 = []
+    let q6 = []
+
+    transformed[0]["q1"].forEach(obj => {
+        for (let key in obj) {
+            q1.push(`${key}: ${obj[key]}`)
+        }
+    })
+    transformed[1]["q2"].forEach(obj => {
+        for (let key in obj) {
+            q2.push(`${key}: ${obj[key]}`)
+        }
+    })
+    transformed[2]["q3"].forEach(obj => {
+        for (let key in obj) {
+            q3.push(`${key}: ${obj[key]}`)
+        }
+    })
+    transformed[3]["q4"].forEach(obj => {
+        for (let key in obj) {
+            q4.push(`${key}: ${obj[key]}`)
+        }
+    })
+    transformed[4]["q5"].forEach(obj => {
+        for (let key in obj) {
+            q5.push(`${key}: ${obj[key]}`)
+        }
+    })
+    transformed[5]["q6"].forEach(obj => {
+        for (let key in obj) {
+            q6.push(`${key}: ${obj[key]}`)
+        }
+    })
+    res.render(path.join(__dirname, 'public', 'percentage.ejs', ), { q1: q1, q2: q2, q3: q3, q4: q4, q5:q5, q6: q6});
 });
 
 app.listen(process.env.PORT || 8080, () => {

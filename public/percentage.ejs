@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Circle</title>
+    <link rel="stylesheet" href="style-percentage.css">
+</head>
+<body>
+<div class="container">
+    <div class="question">
+        <h2>На скільки відсотків ви вражаєте себе фінансово грамотним?</h2>
+        <ul class="answer-list">
+            <% q1.forEach(answer => { %>
+                <li class="answer-item"><%= answer %>  <%= q1[answer] %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="question">
+        <h2>Що таке "Ідентифікаційна крадіжка"?</h2>
+        <ul class="answer-list">
+            <% q2.forEach(answer => { %>
+                <li class="answer-item"><%= answer %>  <%= q2[answer] %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="question">
+        <h2>Що таке "Підроблений чек"?</h2>
+        <ul class="answer-list">
+            <% q3.forEach(answer => { %>
+                <li class="answer-item"><%= answer %>  <%= q3[answer] %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="question">
+        <h2>Який з наступних методів є найкращим для складання бюджету?</h2>
+        <ul class="answer-list">
+            <% q4.forEach(answer => { %>
+                <li class="answer-item"><%= answer %>  <%= q4[answer] %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="question">
+        <h2>Який з наступних факторів не впливає на ваш кредитний рейтинг?</h2>
+        <ul class="answer-list">
+            <% q5.forEach(answer => { %>
+                <li class="answer-item"><%= answer %>  <%= q5[answer] %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="question">
+        <h2>Що означає термін "розподіл активів" у фінансах?</h2>
+        <ul class="answer-list">
+            <% q6.forEach(answer => { %>
+                <li class="answer-item"><%= answer %>  <%= q6[answer] %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
