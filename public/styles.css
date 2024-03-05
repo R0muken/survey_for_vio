@@ -47,11 +47,12 @@ body {
 }
 
 .answer-container input[type="radio"] {
-    width: 13px;
+    width: 4%;
 }
 
 .option {
     margin-left: 4px;
+    width: 95%;
 }
 
 .submit-button {
